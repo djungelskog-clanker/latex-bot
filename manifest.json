@@ -1,0 +1,59 @@
+{
+  "_metadata": {
+    "major_version": 1,
+    "minor_version": 1
+  },
+  "display_information": {
+    "name": "latex-bot",
+    "description": "renders $...$ latex and t$...$ typst math in messages as images"
+  },
+  "features": {
+    "app_home": {
+      "home_tab_enabled": false,
+      "messages_tab_enabled": true,
+      "messages_tab_read_only_enabled": false
+    },
+    "bot_user": {
+      "display_name": "latex-bot",
+      "always_online": true
+    },
+    "slash_commands": [
+      {
+        "command": "/math",
+        "description": "render latex or typst math as an image. rendered images are publicly accessible",
+        "usage_hint": "\\frac{a}{b}  or  t$sum_(k=1)^n k$ is neat",
+        "should_escape": false
+      }
+    ]
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "channels:history",
+        "groups:history",
+        "im:history",
+        "mpim:history",
+        "chat:write",
+        "files:write",
+        "commands"
+      ]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "bot_events": [
+        "message.channels",
+        "message.groups",
+        "message.im",
+        "message.mpim"
+      ]
+    },
+    "interactivity": {
+      "is_enabled": false
+    },
+    "org_deploy_enabled": true,
+    "socket_mode_enabled": true,
+    "token_rotation_enabled": false
+  },
+  "icon": "assets/icon.png"
+}
